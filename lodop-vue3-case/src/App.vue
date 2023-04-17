@@ -1,6 +1,5 @@
 <template>
     <h1>Lodop打印</h1>
-    <img alt="Vue logo" src="./assets/logo.png"/>
     <div>
         <button class="print-btn" v-on:click="btnClickPrint">直接打印</button>
         <button class="print-btn" v-on:click="btnClickPrintA">打印预览</button>
@@ -15,6 +14,11 @@
         <div style="margin-top: 50px">
             <button class="print-btn" v-on:click="printImage()">打印图片</button>
         </div>
+
+        <br>
+        <div style="margin-top: 50px">
+            <button class="print-btn" v-on:click="printName()">系统相关信息</button>
+        </div>
     </div>
 </template>
 
@@ -24,6 +28,8 @@
 import { getLodop } from './LodopFuncs.js'
 import {Barcode} from "./print-js/barcode"; //导入模块
 import {PrintImage} from "./print-js/printImage.js"; //导入模块
+import {System} from "./print-js/system";
+
 export default {
     name: 'App',
     mounted() {
@@ -97,7 +103,8 @@ export default {
 
         // 打印条码相关案例
         ...Barcode,
-        ...PrintImage
+        ...PrintImage,
+        ...System
     }
 }
 </script>
