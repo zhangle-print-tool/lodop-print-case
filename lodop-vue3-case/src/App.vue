@@ -8,7 +8,12 @@
         <button class="print-btn" v-on:click="btnClickPrintC">打印设计</button>
         <br>
         <div style="margin-top: 50px">
-            <button class="print-btn" v-on:click="btnClickPrint">打印条码</button>
+            <button class="print-btn" v-on:click="code128()">打印条码</button>
+        </div>
+
+        <br>
+        <div style="margin-top: 50px">
+            <button class="print-btn" v-on:click="printImage()">打印图片</button>
         </div>
     </div>
 </template>
@@ -18,6 +23,7 @@
 // http://www.c-lodop.com/LodopDemo.html
 import { getLodop } from './LodopFuncs.js'
 import {Barcode} from "./print-js/barcode"; //导入模块
+import {PrintImage} from "./print-js/printImage.js"; //导入模块
 export default {
     name: 'App',
     mounted() {
@@ -90,7 +96,8 @@ export default {
         },
 
         // 打印条码相关案例
-        ...Barcode
+        ...Barcode,
+        ...PrintImage
     }
 }
 </script>
