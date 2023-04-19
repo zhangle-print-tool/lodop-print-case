@@ -51,7 +51,6 @@ export default {
 
                 // ADD_PRINT_RECT(Top, Left, Width, Height,intLineStyle, intLineWidth)
                 LODOP.ADD_PRINT_RECT("0","0","68mm","28.5mm",0,3);
-
                 // 💥 特殊配置
 
                 LODOP.SET_PRINT_STYLE("FontSize",12);
